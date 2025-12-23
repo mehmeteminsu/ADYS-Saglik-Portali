@@ -1,0 +1,205 @@
+:root {
+    --ana-renk: #4e54c8;      
+    --ikinci-renk: #8f94fb;   
+    --vurgu: #ff6b6b;        
+    --arka-plan: #f4f7f6;    
+    --beyaz: #ffffff;
+    --yazi-rengi: #2d3436;
+    --golge: 0 10px 20px rgba(0,0,0,0.05); 
+    --radius: 12px;          
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: var(--arka-plan);
+    color: var(--yazi-rengi);
+    margin: 0; padding: 0;
+}
+
+/* --- DÜZEN (LAYOUT) --- */
+.ana-kapsayici {
+    display: flex;
+    max-width: 1400px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 20px;
+    min-height: 80vh;
+}
+
+/* --- SOL MENÜ --- */
+.sol-menu {
+    width: 250px;
+    background: var(--beyaz);
+    padding: 20px;
+    border-radius: var(--radius);
+    height: fit-content;
+    position: sticky; top: 20px;
+    box-shadow: var(--golge);
+}
+
+.sol-menu ul { list-style: none; padding: 0; }
+.sol-menu li { margin-bottom: 10px; }
+.sol-menu a {
+    text-decoration: none; color: var(--yazi-rengi);
+    display: block; padding: 12px;
+    border-radius: 8px; transition: 0.3s;
+    background: #f8f9fa;
+    font-weight: 500;
+}
+.sol-menu a:hover, .sol-menu a.aktif {
+    background: var(--ana-renk); color: var(--beyaz);
+    transform: translateX(5px);
+}
+
+/* --- ORTA İÇERİK --- */
+.icerik { flex: 1; }
+
+.panel {
+    background: var(--beyaz);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--golge);
+    margin-bottom: 20px;
+}
+
+/* --- SAĞ SIDEBAR --- */
+.sag-sidebar {
+    width: 280px;
+    background: var(--beyaz);
+    padding: 20px;
+    border-radius: var(--radius);
+    height: fit-content;
+    box-shadow: var(--golge);
+}
+
+/* --- HEADER --- */
+.ust-alan {
+    background: linear-gradient(135deg, var(--ana-renk), var(--ikinci-renk)); 
+    color: var(--beyaz); padding: 20px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: var(--golge); margin-bottom: 20px;
+}
+.ust-alan a { color: white; text-decoration: none; font-weight: bold; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; }
+.ust-alan a:hover { background: white; color: var(--ana-renk); }
+
+/* --- FORMLAR --- */
+input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+button { width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer; color: white; font-weight: bold; transition: 0.3s; }
+.btn-mavi { background: var(--ana-renk); } .btn-mavi:hover { background: #3d42b0; }
+.btn-kirmizi { background: var(--vurgu); } .btn-kirmizi:hover { background: #d63031; }
+.btn-yesil { background: #00b894; } .btn-yesil:hover { background: #00a884; }
+
+/* --- SONUÇ KUTULARI --- */
+.sonuc-kutu { padding: 15px; border-radius: 8px; margin-top: 20px; animation: acilma 0.5s ease; }
+.sonuc-riskli { background: #fff5f5; border-left: 5px solid red; color: #c0392b; }
+.sonuc-iyi { background: #f0fff4; border-left: 5px solid green; color: #27ae60; }
+
+@keyframes acilma { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.kart { 
+    display: inline-block; 
+    width: 30%; /* Yan yana 3 tane sığsın diye genişliği azalttık */
+    margin: 1%; 
+    vertical-align: top; 
+    background: white; 
+    border: 1px solid #eee; 
+    border-radius: 10px; 
+    padding: 15px; 
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Biraz gölge ekledik */
+    transition: transform 0.2s; /* Üzerine gelince hareket etsin */
+}
+
+.kart:hover {
+    transform: translateY(-5px); /* Mouse ile gelince hafif yukarı kalkar */
+}
+
+/* Resimlerin ayarı */
+.kart img { 
+    width: 100%; /* Kartın genişliği kadar olsun */
+    height: 150px; /* Yüksekliği sabitledik (Hepsi eşit boyda olur) */
+    object-fit: contain; /* ÖNEMLİ: Resmi kesmeden, orantılı küçültür */
+    background-color: #f8f9fa; /* Resim kenarlarında boşluk kalırsa gri olsun */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.kart h3 {
+    font-size: 18px;
+    color: #4e54c8;
+    margin: 10px 0;
+}
+
+.kart p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Eğer ekran çok küçükse (Mobil) alt alta geçsin */
+@media screen and (max-width: 768px) {
+    .kart {
+        width: 90%; /* Mobilde tam genişlik */
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+/* --- KAYAN YAZI VE ANİMASYONLAR (GERİ GELDİ) --- */
+
+/* 1. Üstteki Kayan Yazı Şeridi */
+.marquee-alan {
+    background: white;
+    color: #ff6b6b; /* Kırmızımsı vurgu rengi */
+    padding: 10px;
+    margin: 0 auto 20px auto;
+    max-width: 1200px; /* Sayfa genişliğiyle aynı olsun */
+    border-radius: 12px;
+    border-left: 5px solid #ff6b6b;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* 2. Sol Menüdeki Sponsor Animasyonu */
+.sponsor-alan {
+    margin-top: 30px;
+    text-align: center;
+    border-top: 2px solid #eee; /* Menüden ayıran çizgi */
+    padding-top: 15px;
+}
+
+.sponsor-alan p {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.animasyon-kutu {
+    font-size: 40px; /* İkon boyutu */
+    display: inline-block;
+    animation: sagaSolaGit 2s infinite alternate ease-in-out; 
+}
+
+/* Sağa sola gitme hareketi */
+@keyframes sagaSolaGit { 
+    from { transform: translateX(-30px); } 
+    to { transform: translateX(30px); } 
+}
+
+/* 3. Reklam Alanı Kutusu */
+.reklam-kutu {
+    background-color: #fff3cd; /* Sarımsı zemin */
+    border: 2px dashed #ffc107; /* Kesik çizgili turuncu kenar */
+    color: #856404;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.reklam-kutu span { display: block; font-size: 12px; font-weight: normal; margin-top: 5px; color: #666; }
