@@ -1,17 +1,16 @@
-# ❤️ Kalp Krizi Riski Tahmin Sistemi
+# 🏥 ADYS - Akıllı Sağlık Takip Portalı
 
-Makine Öğrenmesi (Machine Learning) ile Masaüstü Arayüzünü birleştiren, hasta verilerine dayanarak kalp krizi riskini hesaplayan hibrit bir yazılım çözümü.
+Ofis çalışanlarının ergonomi ve sağlık verilerini takip ederek meslek hastalıklarını önlemeyi amaçlayan Full-Stack bir web uygulaması
 
-## 🚀 Özellikler
-- **Hibrit Mimari:** Python tabanlı yapay zeka modelleri ile C# Windows Forms arayüzünün entegrasyonu.
-- **Gerçek Zamanlı Analiz:** Hasta verilerini (Yaş, Tansiyon, Kolesterol vb.) anlık olarak işleyerek risk analizi yapar.
-- **Görsel Raporlama:** Sağlık profesyonelleri için anlaşılır risk değerlendirme çıktıları sunar.
+## 🎯 Amaç
+Kurumsal ortamlarda sağlık takibi süreçlerini dijitalleştirmek ve çalışan sağlığı için aksiyon alınabilir veriler sunmak.
 
-## 🛠️ Kullanılan Teknolojiler
-- **Arayüz (Frontend):** C# (.NET Framework / WinForms)
-- **Yapay Zeka (Backend):** Python, Scikit-learn, Pandas
-- **Entegrasyon:** C# ve Python arasında JSON tabanlı veri iletişimi
+## 💻 Teknolojik Altyapı
+- **Frontend:** HTML5, CSS3, JavaScript (OOP prensipleri)
+- **Backend:** PHP (Güvenli ve Ölçeklenebilir yapı)
+- **Veritabanı:** MySQL (İlişkisel Veri Yönetimi)
 
-## 📂 Proje Yapısı
-- `/Model`: Eğitim ve tahminleme için kullanılan Python kodları
-- `/App`: Kullanıcı arayüzü için C# kaynak kodları
+## ⚡ Temel Fonksiyonlar
+- **Kullanıcı Paneli:** Sağlık metrikleri için interaktif grafikler
+- **Yönetici Paneli:** İK ve Sağlık birimleri için yönetim sistemi
+- **Güvenli Giriş:** Şifrelenmiş oturum yönetimi ve veri güvenliği
